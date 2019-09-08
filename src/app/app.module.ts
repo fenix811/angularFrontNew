@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers/index';
-import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from './app.effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+//import { StoreModule } from '@ngrx/store';
+// import { EffectsModule } from '@ngrx/effects';
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { reducers, metaReducers } from './store/reducers';
-import { environment } from '../../environments/environment';
-import { AppEffects } from './store/effects/app.effects';
+
+// import { reducers, metaReducers } from './state/appState/appState.reducer';
+// import { CompaniesTabEffect } from './state/appState/appState.effects';
+// import { AppEffects } from './app.effects';
+// import { reducers, metaReducers } from './reducers/index';
+import {StateModule} from './state/state.module';
+
 
 @NgModule({
   declarations: [
@@ -20,23 +22,24 @@ import { AppEffects } from './store/effects/app.effects';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }
-    }),
-    EffectsModule.forRoot([AppEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    StoreModule.forRoot(reducers, {
-      metaReducers, 
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true,
-      }
-    }),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    StateModule,
+    // StoreModule.forRoot(reducers, {
+    //   metaReducers,
+    //   runtimeChecks: {
+    //     strictStateImmutability: true,
+    //     strictActionImmutability: true
+    //   }
+    // }),
+    // EffectsModule.forRoot([AppEffects]),
+    //StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    // StoreModule.forRoot(reducers, {
+    //   metaReducers, 
+    //   runtimeChecks: {
+    //     strictStateImmutability: true,
+    //     strictActionImmutability: true,
+    //   }
+    // }),
+    //!environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
   bootstrap: [AppComponent]
