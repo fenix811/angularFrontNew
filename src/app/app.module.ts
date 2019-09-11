@@ -13,13 +13,20 @@ import { environment } from '../environments/environment';
 // import { AppEffects } from './app.effects';
 // import { reducers, metaReducers } from './reducers/index';
 import {StateModule} from './state/state.module';
-
+//import {LayoutModule} from './layout/layout.module';
+import { ClientComponent } from './layout/client/client.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent, 
+    FooterComponent,
+    ClientComponent
   ],
   imports: [
+//    LayoutModule,
     BrowserModule,
     AppRoutingModule,
     StateModule,
