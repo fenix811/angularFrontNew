@@ -10,7 +10,7 @@ import { AppStateEffects } from './appState.effects';
 @NgModule({
   declarations: [],
   imports: [
-    StoreModule.forFeature('appState', reducers),
+    StoreModule.forFeature('app', reducers),
     EffectsModule.forFeature([AppStateEffects]),
 
     CommonModule

@@ -10,6 +10,10 @@ import {
 // export const subFeatureReducers: ActionReducerMap<State> = {
 
 // };
-export function subFeatureReducer() {
+export interface CompaniesTabState {
+    
+}
+
+export function companiesTabReducer() {
 
 }

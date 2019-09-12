@@ -12,7 +12,6 @@ const routes: Routes = [
     component: AdministrationComponent,
     canActivate: [AuthGuard],
   },
-
 ];
 
 
