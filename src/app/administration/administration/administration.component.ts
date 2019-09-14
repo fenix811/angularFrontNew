@@ -14,7 +14,7 @@ export class AdministrationComponent implements OnInit {
   }
 
   logout() {
-    //TODO destroy tocken in storage
+    //TODO destroy token in storage
     this.router.navigateByUrl('/');
 
   }

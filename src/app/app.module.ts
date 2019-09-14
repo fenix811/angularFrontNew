@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { LoginComponent } from './login/login.component';
 
+import {CompaniesTabModule} from './companies-tab/companies-tab.module'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,8 +24,10 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     StateModule,
+    CompaniesTabModule,   //for now load NOT lazy
   ],
   providers: [],
   bootstrap: [AppComponent]

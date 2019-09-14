@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
+import { catchError, map, switchMap } from 'rxjs/operators';
+//import {Observable} from 
 
+import {AuthenticationService} from '../../services/authenticationService';
+import * as actions from './appState.action';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -8,14 +13,43 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
   })
   export class AppStateEffects {
     // @Effect()
-    // myObservable$ = this.action$.pipe(
-    //     ofType(null);
-    // );
+    // Login$: Observable<any> = this.action$.pipe(
+    //   ofType(actions.AppActionTypes.Login),
+    //   map((action: actions.AppLogin) => action.payload),
+    //   switchMap(payload => {
+    //     return this.authService.login(payload.username, payload.password),
+    //       map((user) => {
+    //         console.log(user);
+    //         return new actions.LoginSuccess({username: user.username, token: user.token});
+    //       })
+    //       catch((error) => {
+    //         console.log(error);
+    //         return Observable.of(new actions.LoginFailure({ error: error }));
+    //       });
+    //   }));
 
 
+    @Effect()
+    Login$ = this.action$.pipe(
+      ofType(actions.AppActionTypes.Login),
+      map((action: actions.AppLogin) => action.payload),
+      switchMap(payload => {
+        return this.authService.login(payload.username, payload.password)
+      })
+    );
 
-  constructor(private actions$: Actions) {
+  constructor(private action$: Actions,
+    private authService: AuthenticationService
+    ) {
 
   }
+//   @Effect({ dispatch: false })
+// LogInSuccess: Observable<any> = this.actions.pipe(
+//   ofType(AuthActionTypes.LOGIN_SUCCESS),
+//   tap((user) => {
+//     localStorage.setItem('token', user.payload.token);
+//     this.router.navigateByUrl('/');
+//   })
+// );
 
 }

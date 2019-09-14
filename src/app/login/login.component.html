@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div>
+<h1>Log in</h1>
+<form (ngSubmit)="onSubmit()" ngNativeValidate>
+    <div>
+        <label for="username">Username</label>
+        <input
+          [(ngModel)]="user.username"
+          name="username"
+          type="text"
+          required
+          id="username"
+          placeholder="enter username">
+        </div>
+    <div>
+        <label for="password">Password</label>
+        <input
+            [(ngModel)]="user.password"
+            name="password"
+            type="password"
+            required
+            id="password"
+            placeholder="enter a password">
+    </div>
+        <button type="submit" >Submit</button>
+      <a [routerLink]="['/']" >Cancel</a>
+</form>
+</div>
