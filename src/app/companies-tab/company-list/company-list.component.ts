@@ -7,7 +7,8 @@ import { getAppState } from '../../state/appState/appState.selector'
 
 import Company from '../../interfaces/company';
 import {LoadCompanies} from '../../state/companiesTabState/companiesTabState.action'
-import { getCompanies } from 'src/app/state/companiesTabState/companiesTabState.selector';
+import { getCompanies, } from '../../state/companiesTabState/companiesTabState.selector';
+import { RootState } from '../../state/root-state';
 
 @Component({
   selector: 'app-company-list',
@@ -15,14 +16,20 @@ import { getCompanies } from 'src/app/state/companiesTabState/companiesTabState.
   styleUrls: ['./company-list.component.scss']
 })
 export class CompanyListComponent implements OnInit {
-  // companies$: Observable<Company[]>;
-  companies$ = this.store.pipe(select(getCompanies));
+  companies1$;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<RootState>) { }
 
+  test() {
+  }
+  test2() {
+
+  }
   ngOnInit() {
-
    this.store.dispatch(new LoadCompanies());
+
+   this.companies1$ = this.store.pipe(select(getCompanies));
+   //this.companies1$ = this.store.pipe(select((state: RootState) => state.companiesTab.companies));
 
   }
 

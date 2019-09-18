@@ -13,7 +13,7 @@ export interface CompaniesTabState {
     selectedCompany: Company;
   }
 export const initialState: CompaniesTabState = {
-  companies: null,
+  companies: [],
   selectedCompany: null,
 }
 
@@ -23,7 +23,7 @@ export const companiesTabReducer = (
 ) => {
   switch (action.type) {
     case CompaniesActionTypes.LoadCompaniesSuccess:{
-      console.log(action.payload);
+//      console.log(action.payload);
       debugger;
       return {
         ...state,

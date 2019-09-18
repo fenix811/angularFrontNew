@@ -1,7 +1,8 @@
-<div  *ngFor="let company of $companies | async" (click)="onSelect(company)">
+<div  *ngFor="let company of companies1$ | async" (click)="onSelect(company)">
     {{company.name}}
   </div>
-
+<input type="button" (click)="test()" value="test1" />
+<input type="button" (click)="test2()" value="test2" />
   <!-- <table class="table table-hover">
     <thead class="thead-dark">
       <tr>
