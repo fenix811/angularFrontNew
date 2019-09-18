@@ -13,6 +13,11 @@ import { HeaderComponent } from './layout/header/header.component';
 import { LoginComponent } from './login/login.component';
 
 import {CompaniesTabModule} from './companies-tab/companies-tab.module'
+import { AuthenticationService } from './services/authenticationService';
+
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './services/token.interceptor';
+import { ApiService } from './services/apiService';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,14 @@ import {CompaniesTabModule} from './companies-tab/companies-tab.module'
     StateModule,
     CompaniesTabModule,   //for now load NOT lazy
   ],
-  providers: [],
+  providers: [AuthenticationService, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
+    ApiService,  //TODO move to its module
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

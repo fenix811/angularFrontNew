@@ -5,15 +5,33 @@ import {
       createSelector,
       MetaReducer
     } from '@ngrx/store';
+import Company from '../../interfaces/company';
+import {CompaniesActionTypes, CompanyActions} from './companiesTabState.action';
     
-    
-// export const subFeatureReducers: ActionReducerMap<State> = {
-
-// };
 export interface CompaniesTabState {
-    
+    companies: Company[];
+    selectedCompany: Company;
+  }
+export const initialState: CompaniesTabState = {
+  companies: null,
+  selectedCompany: null,
 }
 
-export function companiesTabReducer() {
-
+export const companiesTabReducer = (
+  state = initialState,
+  action: CompanyActions
+) => {
+  switch (action.type) {
+    case CompaniesActionTypes.LoadCompaniesSuccess:{
+      console.log(action.payload);
+      debugger;
+      return {
+        ...state,
+        companies: action.payload,
+      }
+    }
+  default:
+    return state;
 }
+}
+

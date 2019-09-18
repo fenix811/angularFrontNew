@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { companiesTabReducer } from './companiesTabState.reducer';
-import { SubFeatureEffect } from './companiesTabState.effect';
+import { CompaniesTabStateEffects } from './companiesTabState.effect';
 
 
 
@@ -11,7 +11,7 @@ import { SubFeatureEffect } from './companiesTabState.effect';
   declarations: [],
   imports: [
     StoreModule.forFeature('companiesTab', companiesTabReducer),
-    EffectsModule.forFeature([SubFeatureEffect]),
+    EffectsModule.forFeature([CompaniesTabStateEffects]),
 
     CommonModule
   ]
