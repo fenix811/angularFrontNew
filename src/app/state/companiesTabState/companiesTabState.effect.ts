@@ -21,8 +21,16 @@ import Company from '../../interfaces/company';
 
 constructor(private action$: Actions,
   private apiService: ApiService
-  ) {
+  ) {}
 
-}
+//   @Effect()
+//   SelectCompany$ = this.action$.pipe(
+//     ofType(actions.CompaniesActionTypes.SelectCompany),
+//     map(action => this.action$.payload),
+
+// //    switchMap(() => this.apiService.getCompanyProducts()),
+//     switchMap((products: Product[]) => of(new actions.LoadCompanyProducts(action$.)))
+//   );
+
 
 }

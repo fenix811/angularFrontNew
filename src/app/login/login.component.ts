@@ -17,21 +17,32 @@ import { AppLogin } from '../state/appState/appState.action'
 export class LoginComponent implements OnInit {
   user: User = new User(); 
 
-  userLogin = new FormControl(null);
-  userPassword = new FormControl(null);
+  loginForm = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
+  });
 
   constructor(private store: Store<RootState>) {}
 
   ngOnInit() {
+  //   this.loginForm  =  this.formBuilder.group({
+  //     email: ['', Validators.required],
+  //     password: ['', Validators.required]
+  // });
   }
   
   login() {
-    // const l = this.userLogin; //TODO use observer
-    // const p = this.userPassword;
+    console.log(this.loginForm.value);
+    console.log(this.loginForm.getRawValue());
+    debugger;
+    
     const l = 'qweUser';
     const p = 'qwePassword';
 
-    this.store.dispatch(new AppLogin({username: l, password: p}));
+    debugger;
+    this.store.dispatch(new AppLogin(this.loginForm.value));
+    
+//    this.store.dispatch(new AppLogin({username: l, password: p}));
 
     
 

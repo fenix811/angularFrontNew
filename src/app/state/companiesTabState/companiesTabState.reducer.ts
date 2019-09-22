@@ -23,13 +23,17 @@ export const companiesTabReducer = (
 ) => {
   switch (action.type) {
     case CompaniesActionTypes.LoadCompaniesSuccess:{
-//      console.log(action.payload);
-      debugger;
       return {
         ...state,
         companies: action.payload,
-      }
+      };
     }
+      case CompaniesActionTypes.SelectCompany:{
+              return {
+                ...state,
+                selectedCompany: action.payload,
+              }
+            }
   default:
     return state;
 }

@@ -6,6 +6,11 @@ export enum CompaniesActionTypes {
     LoadCompanies = '[Companies] LoadCompanies',
     LoadCompaniesSuccess = '[Companies] LoadCompaniesSuccess',
     LoadCompaniesFailure = '[Companies] LoadCompaniesFailure',
+    SelectCompany = '[Companies] SelectCompany',
+    LoadCompanyProducts = '[Companies] LoadCompanyProducts',
+    LoadCompanyProductsSuccess = '[Companies] LoadCompanyProductsSuccess',
+    LoadCompanyProductsFailure = '[Companies] LoadCompanyProductsFailure',
+
   }
   export class LoadCompanies implements Action {
     readonly type = CompaniesActionTypes.LoadCompanies;
@@ -27,4 +32,29 @@ export enum CompaniesActionTypes {
     }) { }
   }
 
-  export type CompanyActions = LoadCompanies | LoadCompaniesSuccess | LoadCompaniesFailure
+  export class SelectCompany implements Action {
+    readonly type = CompaniesActionTypes.SelectCompany;
+  
+    constructor(public payload: Company) { }
+  }
+
+  export class LoadCompanyProducts implements Action {
+    readonly type = CompaniesActionTypes.LoadCompanyProducts;
+  
+    constructor(public payload: number) { }
+  }
+  export class LoadCompanyProductsSuccess implements Action {
+    readonly type = CompaniesActionTypes.LoadCompanyProductsSuccess;
+  
+    constructor(public payload: number) { }
+  }
+  export class LoadCompanyProductsFailure implements Action {
+    readonly type = CompaniesActionTypes.LoadCompanyProductsFailure;
+  
+    constructor(public payload: {
+      error: string,
+    }) { }
+  }
+
+  export type CompanyActions = LoadCompanies | LoadCompaniesSuccess | LoadCompaniesFailure | SelectCompany
+  | LoadCompanyProducts | LoadCompanyProductsSuccess | LoadCompanyProductsFailure

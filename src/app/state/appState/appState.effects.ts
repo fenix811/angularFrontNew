@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map, tap, switchMap } from 'rxjs/operators';
 //import {Observable} from 
 
 import {AuthenticationService} from '../../services/authenticationService';
@@ -34,9 +34,12 @@ import { Observable } from 'rxjs';
       ofType(actions.AppActionTypes.Login),
       map((action: actions.AppLogin) => action.payload),
       switchMap(payload => {
+        debugger;
+
         return this.authService.login(payload.username, payload.password)
       })
     );
+
 
   constructor(private action$: Actions,
     private authService: AuthenticationService
@@ -44,8 +47,8 @@ import { Observable } from 'rxjs';
 
   }
 //   @Effect({ dispatch: false })
-// LogInSuccess: Observable<any> = this.actions.pipe(
-//   ofType(AuthActionTypes.LOGIN_SUCCESS),
+// LogInSuccess: Observable<any> = this.action$.pipe(
+//   ofType(actions.AppActionTypes.LoginSuccess),
 //   tap((user) => {
 //     localStorage.setItem('token', user.payload.token);
 //     this.router.navigateByUrl('/');

@@ -3,18 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 import {AppComponent} from './app.component';
 import {ClientComponent} from './layout/client/client.component';
 import { LoginComponent } from './login/login.component';
-//import {AuthGuard} from './guards/authGuard';
+import { CompanyDetailsComponent } from './companies-tab/company-details/company-details.component';
 
 const routes: Routes = [
   { path: '', component: ClientComponent },
   { 
     path: 'admin',
-//    canActivate: [AuthGuard],
     loadChildren: './administration/administration.module#AdministrationModule'
   },
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'company/:id',
+    component: CompanyDetailsComponent
   },
 ]
 

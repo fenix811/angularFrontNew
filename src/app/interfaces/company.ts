@@ -1,8 +1,8 @@
-export default class Company {
+export default interface Company {
     id: number;
     name: string;
 
-    public constructor(init?:Partial<Company>) {
-        Object.assign(this, init);
-    }
+    // public constructor(init?:Partial<Company>) {
+    //     Object.assign(this, init);
+    // }
 }

@@ -1,6 +1,6 @@
 <div>
 <h1>Log in</h1>
-<form (ngSubmit)="onSubmit()" ngNativeValidate>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
     <div>
         <label for="username">Username</label>
         <input
@@ -9,7 +9,9 @@
           type="text"
           required
           id="username"
-          placeholder="enter username">
+          placeholder="enter username" 
+          formControlName="username"
+          >
         </div>
     <div>
         <label for="password">Password</label>
@@ -19,9 +21,12 @@
             type="password"
             required
             id="password"
-            placeholder="enter a password">
+            placeholder="enter a password"
+            formControlName="password"
+            >
     </div>
-        <button type="submit" >Submit</button>
+        <button (click)="login()" type="submit" >Submit</button>
       <a [routerLink]="['/']" >Cancel</a>
 </form>
 </div>
+

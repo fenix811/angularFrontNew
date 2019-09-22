@@ -18,6 +18,7 @@ import { AuthenticationService } from './services/authenticationService';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './services/token.interceptor';
 import { ApiService } from './services/apiService';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ApiService } from './services/apiService';
     FormsModule,
     AppRoutingModule,
     StateModule,
+    ReactiveFormsModule,
     CompaniesTabModule,   //for now load NOT lazy
   ],
   providers: [AuthenticationService, 

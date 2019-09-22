@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
+import { Router } from '@angular/router';
 
 import { AppState } from '../../state/appState/appState.reducer'
 import { getAppState } from '../../state/appState/appState.selector'
 
 import Company from '../../interfaces/company';
-import {LoadCompanies} from '../../state/companiesTabState/companiesTabState.action'
+import {LoadCompanies, SelectCompany} from '../../state/companiesTabState/companiesTabState.action'
 import { getCompanies, } from '../../state/companiesTabState/companiesTabState.selector';
 import { RootState } from '../../state/root-state';
 
@@ -18,13 +19,20 @@ import { RootState } from '../../state/root-state';
 export class CompanyListComponent implements OnInit {
   companies1$;
 
-  constructor(private store: Store<RootState>) { }
+  constructor(
+    private store: Store<RootState>,
+    private _router: Router,
+    ) { }
 
-  test() {
-  }
-  test2() {
+  navigateCompany(company: Company) {
+    debugger;
+    this.store.dispatch(new SelectCompany(company));
+    //this._router.navigate(['/company', { queryParams: { id: company.id }});
+    //this._router.navigate(['company'], { queryParams: { id: company.id } });
+    this._router.navigate(['company', company.id]);
 
   }
+
   ngOnInit() {
    this.store.dispatch(new LoadCompanies());
 
