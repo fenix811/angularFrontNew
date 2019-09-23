@@ -7,14 +7,17 @@ import {
     } from '@ngrx/store';
 import Company from '../../interfaces/company';
 import {CompaniesActionTypes, CompanyActions} from './companiesTabState.action';
+import Product from '../../interfaces/product';
     
 export interface CompaniesTabState {
     companies: Company[];
     selectedCompany: Company;
+    companyProducts: Product[];
   }
 export const initialState: CompaniesTabState = {
   companies: [],
   selectedCompany: null,
+  companyProducts: []
 }
 
 export const companiesTabReducer = (
@@ -34,6 +37,13 @@ export const companiesTabReducer = (
                 selectedCompany: action.payload,
               }
             }
+      case CompaniesActionTypes.LoadCompanyProductsSuccess:{
+        debugger;
+        return {
+          ...state,
+          companyProducts: action.payload,
+        }
+      }
   default:
     return state;
 }

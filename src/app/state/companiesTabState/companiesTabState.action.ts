@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 
 import Company from '../../interfaces/company'
+import Product from '../../interfaces/product';
 
 export enum CompaniesActionTypes {
     LoadCompanies = '[Companies] LoadCompanies',
@@ -14,9 +15,6 @@ export enum CompaniesActionTypes {
   }
   export class LoadCompanies implements Action {
     readonly type = CompaniesActionTypes.LoadCompanies;
-  
-//     constructor(public payload: {
-//     }) { }
    }
   
   export class LoadCompaniesSuccess implements Action {
@@ -41,12 +39,12 @@ export enum CompaniesActionTypes {
   export class LoadCompanyProducts implements Action {
     readonly type = CompaniesActionTypes.LoadCompanyProducts;
   
-    constructor(public payload: number) { }
+    constructor(public payload: {id: number}) { }
   }
   export class LoadCompanyProductsSuccess implements Action {
     readonly type = CompaniesActionTypes.LoadCompanyProductsSuccess;
   
-    constructor(public payload: number) { }
+    constructor(public payload: Product[] ) { }
   }
   export class LoadCompanyProductsFailure implements Action {
     readonly type = CompaniesActionTypes.LoadCompanyProductsFailure;

@@ -34,12 +34,10 @@ export class LoginComponent implements OnInit {
   login() {
     console.log(this.loginForm.value);
     console.log(this.loginForm.getRawValue());
-    debugger;
     
     const l = 'qweUser';
     const p = 'qwePassword';
 
-    debugger;
     this.store.dispatch(new AppLogin(this.loginForm.value));
     
 //    this.store.dispatch(new AppLogin({username: l, password: p}));

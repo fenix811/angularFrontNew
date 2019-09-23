@@ -17,7 +17,7 @@ import { RootState } from '../../state/root-state';
   styleUrls: ['./company-list.component.scss']
 })
 export class CompanyListComponent implements OnInit {
-  companies1$;
+  companies$;
 
   constructor(
     private store: Store<RootState>,
@@ -25,10 +25,8 @@ export class CompanyListComponent implements OnInit {
     ) { }
 
   navigateCompany(company: Company) {
-    debugger;
+    //debugger;
     this.store.dispatch(new SelectCompany(company));
-    //this._router.navigate(['/company', { queryParams: { id: company.id }});
-    //this._router.navigate(['company'], { queryParams: { id: company.id } });
     this._router.navigate(['company', company.id]);
 
   }
@@ -36,8 +34,7 @@ export class CompanyListComponent implements OnInit {
   ngOnInit() {
    this.store.dispatch(new LoadCompanies());
 
-   this.companies1$ = this.store.pipe(select(getCompanies));
-   //this.companies1$ = this.store.pipe(select((state: RootState) => state.companiesTab.companies));
+   this.companies$ = this.store.pipe(select(getCompanies));
 
   }
 

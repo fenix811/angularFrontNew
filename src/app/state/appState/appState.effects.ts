@@ -34,7 +34,7 @@ import { Observable } from 'rxjs';
       ofType(actions.AppActionTypes.Login),
       map((action: actions.AppLogin) => action.payload),
       switchMap(payload => {
-        debugger;
+        //debugger;
 
         return this.authService.login(payload.username, payload.password)
       })

@@ -19,8 +19,8 @@ export class ApiService {
   public getCompanies(): Observable<Company[]> {
     return this.http.get<Company[]>('api/company/getcompanies');
   }
-  public getCompanyProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>('api/product/getcompanyproducts');
+  public getCompanyProducts(id: number): Observable<Product[]> {
+    debugger;
+    return this.http.get<Product[]>(`api/product/getcompanyproducts/${id}`);
   }
-  getcompanyproducts
 }

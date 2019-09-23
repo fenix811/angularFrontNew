@@ -1,8 +1,4 @@
-<div  *ngFor="let company of companies1$ | async" >
-    <!-- <a [routerLink]="['/details', company.id]">
-      <span>{{ company.name }}</span>
-    </a> -->
-
+<div  *ngFor="let company of companies$ | async" >
   <a  [routerLink]="" (click)="navigateCompany(company)">{{company.name}}</a>  
-  </div>
+</div>
   

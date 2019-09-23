@@ -1,5 +1,23 @@
 <h1>Company Info</h1>
+<div > 
+    <div>
+        <span>ID:</span>
+        <span>{{(selectedCompany$ | async).id}}</span>
+    </div>
+    <div>
+        <span>Name:</span>
+        <span>{{(selectedCompany$ | async).name}}</span>
+    </div>
+    <div>
+        <span>Address:</span>
+        <span>{{(selectedCompany$ | async).address}}</span>
+    </div>
+</div>
 <hr  />
 <h1>Products</h1>
+<div  *ngFor="let product of companyProducts$ | async" >
+    <div>{{product.name}}</div>
+</div>
+      
 <hr  />
 <a  [routerLink]="['/']" >back to list</a>  
