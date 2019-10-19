@@ -14,7 +14,7 @@ import Product from '../../interfaces/product';
   export class CompaniesTabStateEffects {
     @Effect()
   LoadCompanies$ = this.action$.pipe(
-    ofType(actions.CompaniesActionTypes.LoadCompanies),
+    ofType(actions.ECompaniesActionTypes.LoadCompanies),
     // map((action: action$.LoadCompanies) => action.payload),
     switchMap(() => this.apiService.getCompanies()),
     switchMap((companies: Company[]) => of(new actions.LoadCompaniesSuccess(companies)))
@@ -34,11 +34,23 @@ constructor(
 
   @Effect()
   LoadCompanyProducts$ = this.action$.pipe(
-    ofType(actions.CompaniesActionTypes.LoadCompanyProducts),
-    map(action => this.action$.payload),
-  switchMap((payload) => this.apiService.getCompanyProducts(payload.id)),
-    switchMap((products:Product[]) => of(new actions.LoadCompanyProductsSuccess(products)))
-  )
+    ofType(actions.ECompaniesActionTypes.LoadCompanyProducts),
+    // tap( action => {
+    //   // tslint:disable-next-line: no-debugger
+    //   debugger;
+    //   console.log('tap: ' + action); } ),
+
+    switchMap((action: actions.LoadCompanyProducts) => this.apiService.getCompanyProducts(action.payload)),
+    switchMap((products: Product[]) => of(new actions.LoadCompanyProductsSuccess(products)))
+  );
+
+  // LoadCompanyProducts$ = this.action$.pipe(
+  //   ofType(actions.CompaniesActionTypes.LoadCompanyProducts),
+  //   switchMap((details) => this.apiService.getCompanyDetails(1)),
+  //   switchMap((action) => this.apiService.getCompanyProducts(1)),
+  //   switchMap((products:Product[]) => of(new actions.LoadCompanyProductsSuccess(products)))
+  // )
+
 
 
 }

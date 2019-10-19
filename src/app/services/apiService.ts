@@ -20,7 +20,6 @@ export class ApiService {
     return this.http.get<Company[]>('api/company/getcompanies');
   }
   public getCompanyProducts(id: number): Observable<Product[]> {
-    debugger;
     return this.http.get<Product[]>(`api/product/getcompanyproducts/${id}`);
   }
 }

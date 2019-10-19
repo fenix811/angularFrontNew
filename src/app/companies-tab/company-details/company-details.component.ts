@@ -23,7 +23,7 @@ companyProducts$;
 
   ngOnInit() {
     //debugger;
-    this.store.dispatch(new LoadCompanyProducts({id: this._route.snapshot.params.id}));
+    this.store.dispatch(new LoadCompanyProducts(this._route.snapshot.params.id));
     this.selectedCompany$ = this.store.pipe(select(getSelectedCompany));
 
     this.companyProducts$ = this.store.pipe(select(getCompanyPeoducts));

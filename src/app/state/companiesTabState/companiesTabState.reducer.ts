@@ -6,9 +6,9 @@ import {
       MetaReducer
     } from '@ngrx/store';
 import Company from '../../interfaces/company';
-import {CompaniesActionTypes, CompanyActions} from './companiesTabState.action';
+import {ECompaniesActionTypes, CompanyActions} from './companiesTabState.action';
 import Product from '../../interfaces/product';
-    
+
 export interface CompaniesTabState {
     companies: Company[];
     selectedCompany: Company;
@@ -25,19 +25,19 @@ export const companiesTabReducer = (
   action: CompanyActions
 ) => {
   switch (action.type) {
-    case CompaniesActionTypes.LoadCompaniesSuccess:{
+    case ECompaniesActionTypes.LoadCompaniesSuccess:{
       return {
         ...state,
         companies: action.payload,
       };
     }
-      case CompaniesActionTypes.SelectCompany:{
+      case ECompaniesActionTypes.SelectCompany:{
               return {
                 ...state,
                 selectedCompany: action.payload,
               }
             }
-      case CompaniesActionTypes.LoadCompanyProductsSuccess:{
+      case ECompaniesActionTypes.LoadCompanyProductsSuccess:{
         debugger;
         return {
           ...state,

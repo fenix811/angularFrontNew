@@ -1,0 +1,7 @@
+<p>quick-search-product works!</p>
+<form class="form-search" [formGroup]="searchForm"  novalidate>
+  <input class="form-control" name="productName" formControlName="productName" />
+</form>
+<div *ngFor="let product of products$ | async">
+  <div>{{product.name}}</div>
+</div>

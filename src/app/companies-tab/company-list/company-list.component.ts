@@ -25,7 +25,6 @@ export class CompanyListComponent implements OnInit {
     ) { }
 
   navigateCompany(company: Company) {
-    //debugger;
     this.store.dispatch(new SelectCompany(company));
     this._router.navigate(['company', company.id]);
 
