@@ -22,4 +22,8 @@ export class ApiService {
   public getCompanyProducts(id: number): Observable<Product[]> {
     return this.http.get<Product[]>(`api/product/getcompanyproducts/${id}`);
   }
+  public searchProduct(text: string): Observable<Product[]> {
+    return this.http.get<Product[]>('api/product/getproductsbyname/' + text);
+  }
+
 }
