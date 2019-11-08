@@ -12,12 +12,10 @@ import Product from '../../interfaces/product';
 export interface CompaniesTabState {
     companies: Company[];
     selectedCompany: Company;
-    companyProducts: Product[];
   }
 export const initialState: CompaniesTabState = {
   companies: [],
   selectedCompany: null,
-  companyProducts: []
 }
 
 export const companiesTabReducer = (
@@ -38,12 +36,21 @@ export const companiesTabReducer = (
               }
             }
       case ECompaniesActionTypes.LoadCompanyProductsSuccess:{
-        debugger;
         return {
           ...state,
-          companyProducts: action.payload,
+          selectedCompany: {
+            ...state.selectedCompany,
+            companyProducts: action.payload,
+          }
         }
       }
+      case ECompaniesActionTypes.ResetSelectedCompany:{
+        return {
+          ...state,
+          selectedCompany: null,
+        }
+      }
+
   default:
     return state;
 }

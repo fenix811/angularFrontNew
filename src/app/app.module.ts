@@ -4,13 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { environment } from '../environments/environment';
 
 import {StateModule} from './state/state.module';
-import { ClientComponent } from './layout/client/client.component';
-import { FooterComponent } from './layout/footer/footer.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { LoginComponent } from './login/login.component';
 
 import {CompaniesTabModule} from './companies-tab/companies-tab.module'
 import { AuthenticationService } from './services/authenticationService';
@@ -20,13 +15,15 @@ import { TokenInterceptor } from './services/token.interceptor';
 import { ApiService } from './services/apiService';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { LayoutModule } from './layout/layout.module';
+import { LoginComponent } from './login/login.component';
+import { ClientLayoutComponent } from './client-layout/client-layout.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent, 
-    FooterComponent,
-    ClientComponent,
     LoginComponent,
+    ClientLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +32,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     StateModule,
     ReactiveFormsModule,
     CompaniesTabModule,   //for now load NOT lazy
+    LayoutModule,
   ],
-  providers: [AuthenticationService, 
+  providers: [AuthenticationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

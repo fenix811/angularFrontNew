@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from  '@angular/forms';
-import { Router } from  '@angular/router';
+import { FormGroup, FormControl } from  '@angular/forms';
 
-import User  from '../interfaces/user';
 // import { AuthService } from  '../auth.service';
 import { Store, State } from '@ngrx/store';
 import { RootState } from '../state/root-state';
 
-import { AppLogin } from '../state/appState/appState.action' 
+import { AppLogin } from '../state/appState/appState.action'
 
 @Component({
   selector: 'app-login',
@@ -15,7 +13,6 @@ import { AppLogin } from '../state/appState/appState.action'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  user: User = new User(); 
 
   loginForm = new FormGroup({
     username: new FormControl(''),
@@ -30,19 +27,15 @@ export class LoginComponent implements OnInit {
   //     password: ['', Validators.required]
   // });
   }
-  
+
   login() {
     console.log(this.loginForm.value);
     console.log(this.loginForm.getRawValue());
-    
+
     const l = 'qweUser';
     const p = 'qwePassword';
 
     this.store.dispatch(new AppLogin(this.loginForm.value));
-    
-//    this.store.dispatch(new AppLogin({username: l, password: p}));
-
-    
 
   }
 

@@ -3,11 +3,11 @@ import { fromEvent, of } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-client',
-  templateUrl: './client.component.html',
-  styleUrls: ['./client.component.scss']
+  selector: 'app-client-layout',
+  templateUrl: './client-layout.component.html',
+  styleUrls: ['./client-layout.component.scss']
 })
-export class ClientComponent implements OnInit {
+export class ClientLayoutComponent implements OnInit {
 
   constructor() { }
 
@@ -29,7 +29,7 @@ export class ClientComponent implements OnInit {
     // debugger;
     // console.log(foo)
     // }
-    // ); 
+    // );
   }
 
 }

@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AppComponent} from './app.component';
-import {ClientComponent} from './layout/client/client.component';
+
+import {ClientLayoutComponent} from './client-layout/client-layout.component';
 import { LoginComponent } from './login/login.component';
 import { CompanyDetailsComponent } from './companies-tab/company-details/company-details.component';
+import { CompanyListComponent } from './companies-tab/company-list/company-list.component';
 
 const routes: Routes = [
-  { path: '', component: ClientComponent },
-  { 
+  {
+    path: '', component: ClientLayoutComponent,
+    children: [
+      { path: '', component: CompanyListComponent },
+    ]
+  },
+  {
     path: 'admin',
     loadChildren: './administration/administration.module#AdministrationModule'
   },
@@ -26,16 +32,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-
-
-// export const routes: Routes = [
-//   { path: '', pathMatch: 'full', redirectTo: 'client' },
-//   { path: 'client', component: AppComponent },
-//   {
-//     path: 'login',
-//     loadChildren: './administration/administration.module#AdministrationModule',
-//   },
-// ]
-
-// export const routing: ModuleWithProviders = RouterModule.forRoot(routes)

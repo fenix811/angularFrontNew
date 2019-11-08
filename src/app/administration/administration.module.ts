@@ -5,12 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdministrationRoutingModule } from './administration.routing.module';
 
 import { AuthGuard } from './guards/authGuard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SecondAdminComponent } from './second-admin/second-admin.component';
 
 
 
 @NgModule({
   declarations: [
     AdministrationComponent,
+    DashboardComponent,
+    SecondAdminComponent,
 //    LoginComponent,
   ],
   imports: [
@@ -21,6 +25,6 @@ import { AuthGuard } from './guards/authGuard';
 //    LoginComponent
   ],
   providers: [AuthGuard]
-  
+
 })
 export class AdministrationModule { }

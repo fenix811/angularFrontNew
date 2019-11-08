@@ -5,27 +5,21 @@ import { AdministrationComponent } from './administration/administration.compone
 import { Routes, RouterModule } from '@angular/router';
 import { AdministrationModule } from './administration.module';
 import {AuthGuard} from './guards/authGuard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SecondAdminComponent } from './second-admin/second-admin.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AdministrationComponent,
-    canActivate: [AuthGuard],
+//    canActivate: [AuthGuard],
+    children :[
+      { path: 'dashboard', component: DashboardComponent},
+      { path: 'secondAdmin', component: SecondAdminComponent},
+  ]
   },
 ];
 
-
-// const routes: Routes = [
-//   {
-//     children: [
-//       { path: '', component: AdministrationComponent, 
-//         canActivate: [AuthGuard]
-//       } ,
-//       { path: 'login', 
-//         component:  LoginComponent}
-//       ]
-//   },
-// ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

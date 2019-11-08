@@ -11,6 +11,7 @@ export enum ECompaniesActionTypes {
     LoadCompanyProducts = '[Companies] LoadCompanyProducts',
     LoadCompanyProductsSuccess = '[Companies] LoadCompanyProductsSuccess',
     LoadCompanyProductsFailure = '[Companies] LoadCompanyProductsFailure',
+    ResetSelectedCompany = '[Companies] ResetSelectedCompany',
 
   }
 export class LoadCompanies implements Action {
@@ -53,6 +54,11 @@ export class LoadCompanyProductsFailure implements Action {
       error: string,
     }) { }
   }
+export class ResetSelectedCompany implements Action {
+    readonly type = ECompaniesActionTypes.ResetSelectedCompany;
+    constructor() { }
+  }
+
 
 export type CompanyActions = LoadCompanies | LoadCompaniesSuccess | LoadCompaniesFailure | SelectCompany
-  | LoadCompanyProducts | LoadCompanyProductsSuccess | LoadCompanyProductsFailure;
+  | LoadCompanyProducts | LoadCompanyProductsSuccess | LoadCompanyProductsFailure | ResetSelectedCompany;
