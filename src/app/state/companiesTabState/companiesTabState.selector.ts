@@ -22,7 +22,7 @@ export const getSelectedCompanyById = createSelector(
 
 export const getCompanyPeoducts = createSelector(
   getFeatureData,
-  (state: CompaniesTabState) => state.selectedCompany.companyProducts
+  (state: CompaniesTabState) => (state.selectedCompany) ? state.selectedCompany.companyProducts : []
 );
 
 

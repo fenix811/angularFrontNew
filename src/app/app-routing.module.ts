@@ -11,6 +11,7 @@ const routes: Routes = [
     path: '', component: ClientLayoutComponent,
     children: [
       { path: '', component: CompanyListComponent },
+      { path: 'company/:id', component: CompanyDetailsComponent },
     ]
   },
   {
@@ -20,10 +21,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  },
-  {
-    path: 'company/:id',
-    component: CompanyDetailsComponent
   },
 ]
 
