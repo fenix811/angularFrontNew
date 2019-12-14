@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { catchError, map, tap, switchMap } from 'rxjs/operators';
-//import {Observable} from 
+//import {Observable} from
 
-import {AuthenticationService} from '../../services/authenticationService';
+import {AuthenticationService} from '../../core/services/authenticationService';
 import * as actions from './appState.action';
 import { Observable } from 'rxjs';
 

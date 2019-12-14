@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 
-import Company from '../../interfaces/company'
-import Product from '../../interfaces/product';
+import Company from '../../core/interfaces/company'
+import Product from '../../core/interfaces/product';
 
 export enum ECompaniesActionTypes {
     LoadCompanies = '[Companies] LoadCompanies',

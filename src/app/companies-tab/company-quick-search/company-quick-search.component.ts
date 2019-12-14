@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {debounce, switchMap, map, tap, distinctUntilChanged} from 'rxjs/operators';
 import { interval, Observable } from 'rxjs';
-import { ApiService } from '../../services/apiService';
+import { ApiService } from '../../core/services/apiService';
 
 @Component({
   selector: 'app-company-quick-search',

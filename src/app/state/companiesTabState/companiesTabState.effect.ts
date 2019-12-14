@@ -4,9 +4,9 @@ import { map, switchMap, tap} from 'rxjs/operators';
 import { of } from 'rxjs';
 
 import * as actions from './companiesTabState.action';
-import { ApiService } from '../../services/apiService';
-import Company from '../../interfaces/company';
-import Product from '../../interfaces/product';
+import { ApiService } from '../../core/services/apiService';
+import Company from '../../core/interfaces/company';
+import Product from '../../core/interfaces/product';
 
 @Injectable({
     providedIn: 'root',

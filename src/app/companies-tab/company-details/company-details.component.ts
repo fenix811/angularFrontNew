@@ -4,7 +4,7 @@ import { RootState } from '../../state/root-state';
 import { getSelectedCompany, getCompanyPeoducts, getCompanies, getFeatureData, getSelectedCompanyById } from '../../state/companiesTabState/companiesTabState.selector';
 import {LoadCompanyProducts, SelectCompany, ResetSelectedCompany} from '../../state/companiesTabState/companiesTabState.action'
 import { ActivatedRoute } from '@angular/router';
-import Product from '../../interfaces/product';
+import Product from '../../core/interfaces/product';
 
 
 @Component({

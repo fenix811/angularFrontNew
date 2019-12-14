@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {ClientLayoutComponent} from './client-layout/client-layout.component';
-import { LoginComponent } from './login/login.component';
+import {ClientLayoutComponent} from './layout/client-layout/client-layout.component';
+import { LoginComponent } from './core/login/login.component';
 import { CompanyDetailsComponent } from './companies-tab/company-details/company-details.component';
 import { CompanyListComponent } from './companies-tab/company-list/company-list.component';
+import { OrderListComponent } from './orders-tab/order-list/order-list.component';
+import { OrdersModule } from './orders-tab/orders-module.module';
 
 const routes: Routes = [
   {
@@ -22,6 +24,16 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
+  {
+    path: 'orders',
+    loadChildren: () => OrdersModule
+    //component: OrderListComponent,
+
+    //component: ClientLayoutComponent,
+    // children: [
+    //   { path: '', component: OrderListComponent },
+    // ]
+  }
 ]
 
 @NgModule({

@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { AppState } from '../../state/appState/appState.reducer'
 import { getAppState } from '../../state/appState/appState.selector'
 
-import Company from '../../interfaces/company';
+import Company from '../../core/interfaces/company';
 import {LoadCompanies, SelectCompany} from '../../state/companiesTabState/companiesTabState.action'
 import { getCompanies, } from '../../state/companiesTabState/companiesTabState.selector';
 import { RootState } from '../../state/root-state';

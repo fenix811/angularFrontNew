@@ -7,7 +7,7 @@ import {
   } from '@ngrx/store';
   import { Action } from '@ngrx/store';
 
-  import User from '../../interfaces/user'
+  import User from '../../core/interfaces/user'
 
   export enum AppActionTypes {
     Login = '[App] Login',
@@ -17,16 +17,16 @@ import {
 
   export class AppLogin implements Action {
     readonly type = AppActionTypes.Login;
-  
+
     constructor(public payload: {
       username: string,
       password: string,
     }) { }
   }
-  
+
   export class LoginSuccess implements Action {
     readonly type = AppActionTypes.LoginSuccess;
-  
+
     constructor(public payload: {
       username: any,
       token: any,
@@ -34,14 +34,13 @@ import {
   }
   export class LoginFailure implements Action {
     readonly type = AppActionTypes.LoginFailure;
-  
+
     constructor(public payload: {
       error: string,
     }) { }
   }
-  
-  
-  
+
+
+
   export type AppActions = AppLogin | LoginSuccess | LoginFailure
 
-  

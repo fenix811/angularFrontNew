@@ -5,9 +5,9 @@ import {
       createSelector,
       MetaReducer
     } from '@ngrx/store';
-import Company from '../../interfaces/company';
+import Company from '../../core/interfaces/company';
 import {ECompaniesActionTypes, CompanyActions} from './companiesTabState.action';
-import Product from '../../interfaces/product';
+import Product from '../../core/interfaces/product';
 
 export interface CompaniesTabState {
     companies: Company[];

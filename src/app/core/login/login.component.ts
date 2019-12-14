@@ -3,9 +3,9 @@ import { FormGroup, FormControl } from  '@angular/forms';
 
 // import { AuthService } from  '../auth.service';
 import { Store, State } from '@ngrx/store';
-import { RootState } from '../state/root-state';
+import { RootState } from '../../state/root-state';
 
-import { AppLogin } from '../state/appState/appState.action'
+import { AppLogin } from '../../state/appState/appState.action'
 
 @Component({
   selector: 'app-login',

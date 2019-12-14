@@ -8,22 +8,24 @@ import { AppComponent } from './app.component';
 import {StateModule} from './state/state.module';
 
 import {CompaniesTabModule} from './companies-tab/companies-tab.module'
-import { AuthenticationService } from './services/authenticationService';
+import { AuthenticationService } from './core/services/authenticationService';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './services/token.interceptor';
-import { ApiService } from './services/apiService';
+import { TokenInterceptor } from './core/services/token.interceptor';
+import { ApiService } from './core/services/apiService';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { LayoutModule } from './layout/layout.module';
-import { LoginComponent } from './login/login.component';
-import { ClientLayoutComponent } from './client-layout/client-layout.component';
+import { LoginComponent } from './core/login/login.component';
+import { ClientLayoutComponent } from './layout/client-layout/client-layout.component';
+import { OrderListComponent } from './orders-tab/order-list/order-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ClientLayoutComponent
+    ClientLayoutComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,

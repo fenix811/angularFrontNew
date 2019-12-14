@@ -11,3 +11,17 @@ div#header {
       // margin-left: 7px;
   }
 }
+#menu{
+  display: flex;
+  div {
+    margin: 10px;
+  }
+  // flex-flow: column;
+}
+
+active-link{
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black;
+}
