@@ -3,12 +3,17 @@
 </div>
 <!-- <app-header></app-header> -->
 <!-- <app-company-list></app-company-list> -->
+<mat-card>
+  <mat-card-content>
 <div id="menu">
   <div>
-    <a routerLink="/" routerLinkActive="active-link">Companies</a>
+    <button routerLink="/" mat-button>Companies</button>
   </div>
   <div>
-    <a routerLink="/orders" routerLinkActive="active-link">Orders</a>
+    <button routerLink="/orders" mat-button>Orders</button>
   </div>
 </div>
+</mat-card-content>
+</mat-card>
+
 <router-outlet></router-outlet>

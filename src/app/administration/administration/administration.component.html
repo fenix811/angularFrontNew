@@ -3,8 +3,17 @@
     <a href="" (click)="logout()">logout</a>
 </div>
 
-<ul>
-  <li><a routerLink="dashboard">dashboard</a></li>
-  <li><a routerLink="secondAdmin">secondAdmin</a></li>
-</ul>
+<mat-card>
+  <mat-card-content>
+<div id="menu">
+  <div>
+    <button routerLink="dashboard" mat-button>dashboard</button>
+  </div>
+  <div>
+    <button routerLink="secondAdmin" mat-button>secondAdmin</button>
+  </div>
+</div>
+</mat-card-content>
+</mat-card>
+
 <router-outlet></router-outlet>

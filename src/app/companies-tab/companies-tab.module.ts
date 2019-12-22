@@ -8,6 +8,7 @@ import { CompanyListComponent } from './company-list/company-list.component';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
 import { CompanyQuickSearchComponent } from './company-quick-search/company-quick-search.component';
 import { CompanyProductsComponent } from './company-products/company-products.component';
+import { AppMaterialModule } from '../layout/app.material.module';
 
 
 
@@ -22,6 +23,7 @@ import { CompanyProductsComponent } from './company-products/company-products.co
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
+    AppMaterialModule
   ],
   exports: [CompanyListComponent]
 

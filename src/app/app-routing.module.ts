@@ -5,7 +5,6 @@ import {ClientLayoutComponent} from './layout/client-layout/client-layout.compon
 import { LoginComponent } from './core/login/login.component';
 import { CompanyDetailsComponent } from './companies-tab/company-details/company-details.component';
 import { CompanyListComponent } from './companies-tab/company-list/company-list.component';
-import { OrderListComponent } from './orders-tab/order-list/order-list.component';
 
 const routes: Routes = [
   {
@@ -14,9 +13,9 @@ const routes: Routes = [
     children: [
       { path: '', component: CompanyListComponent },
       { path: 'company/:id', component: CompanyDetailsComponent },
-{      path: 'orders',
-      loadChildren: () => import('./orders-tab/orders-tab.module').then((m) => m.OrdersModule)
-}
+      { path: 'orders',
+        loadChildren: () => import('./orders-tab/orders-tab.module').then((m) => m.OrdersModule)
+      }
     ]
   },
   {

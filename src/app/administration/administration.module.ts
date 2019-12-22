@@ -7,6 +7,7 @@ import { AdministrationRoutingModule } from './administration.routing.module';
 import { AuthGuard } from './guards/authGuard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SecondAdminComponent } from './second-admin/second-admin.component';
+import { AppMaterialModule } from '../layout/app.material.module';
 
 
 
@@ -19,7 +20,8 @@ import { SecondAdminComponent } from './second-admin/second-admin.component';
   ],
   imports: [
     CommonModule,
-    AdministrationRoutingModule
+    AdministrationRoutingModule,
+    AppMaterialModule
   ],
   exports: [
 //    LoginComponent

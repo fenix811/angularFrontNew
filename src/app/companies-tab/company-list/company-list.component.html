@@ -1,4 +1,7 @@
-<div  *ngFor="let company of companies$ | async" >
-  <a  [routerLink]="" (click)="navigateCompany(company)">{{company.name}}</a>  
-</div>
-  
+<!-- <div  *ngFor="let company of companies$ | async" >
+  <a  [routerLink]="" (click)="navigateCompany(company)">{{company.name}}</a>
+</div> -->
+
+<mat-list role="list">
+  <mat-list-item class="company-item" role="listitem" (click)="navigateCompany(company)" *ngFor="let company of companies$ | async" >{{ company.name }}</mat-list-item>
+</mat-list>

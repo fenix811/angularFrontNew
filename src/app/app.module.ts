@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import {MatTabsModule} from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,18 +20,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from './layout/layout.module';
 import { LoginComponent } from './core/login/login.component';
 import { ClientLayoutComponent } from './layout/client-layout/client-layout.component';
-import { OrderListComponent } from './orders-tab/order-list/order-list.component';
+
+import { AppMaterialModule } from './layout/app.material.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ClientLayoutComponent,
-    OrderListComponent
   ],
   imports: [
+    AppMaterialModule,
+
     BrowserAnimationsModule,
-    MatTabsModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
@@ -40,6 +41,7 @@ import { OrderListComponent } from './orders-tab/order-list/order-list.component
     ReactiveFormsModule,
     CompaniesTabModule,   //for now load NOT lazy
     LayoutModule,
+
   ],
   providers: [AuthenticationService,
     {

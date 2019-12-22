@@ -14,6 +14,7 @@ const routes: Routes = [
     component: AdministrationComponent,
 //    canActivate: [AuthGuard],
     children :[
+      { path: '', redirectTo: 'dashboard'},
       { path: 'dashboard', component: DashboardComponent},
       { path: 'secondAdmin', component: SecondAdminComponent},
   ]

@@ -1,4 +1,8 @@
-<h1>Company Info</h1>
+<div class="details-container">
+<h1 class="card-title1">Company Info</h1>
+<hr />
+<mat-card>
+  <mat-card-content>
 <div >
     <div>
         <span>ID:</span>
@@ -13,8 +17,13 @@
         <span>{{(selectedCompany$ | async)?.address}}</span>
     </div>
 </div>
-<hr  />
+</mat-card-content>
+</mat-card>
+
 <app-company-products [products]="products"></app-company-products>
 
 <hr  />
-<a  [routerLink]="['/']" >back to list</a>
+
+<button [routerLink]="['/']" class="app-button" mat-raised-button color="accent">back to list</button>
+
+</div>
