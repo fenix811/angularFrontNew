@@ -3,5 +3,8 @@
 </div> -->
 
 <mat-list role="list">
-  <mat-list-item class="company-item" role="listitem" (click)="navigateCompany(company)" *ngFor="let company of companies$ | async" >{{ company.name }}</mat-list-item>
+  <mat-list-item class="company-item" role="listitem" (click)="navigateCompany(company)" *ngFor="let company of companies$ | async" >
+    <div class="item-column">{{ company.name }}</div>
+    <div>{{ company.address }}</div>
+  </mat-list-item>
 </mat-list>

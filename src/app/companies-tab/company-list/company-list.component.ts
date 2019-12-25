@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { Router } from '@angular/router';
-
-import { AppState } from '../../state/appState/appState.reducer'
-import { getAppState } from '../../state/appState/appState.selector'
 
 import Company from '../../core/interfaces/company';
 import {LoadCompanies, SelectCompany} from '../../state/companiesTabState/companiesTabState.action'
@@ -34,7 +30,6 @@ export class CompanyListComponent implements OnInit {
    this.store.dispatch(new LoadCompanies());
 
    this.companies$ = this.store.pipe(select(getCompanies));
-
   }
 
 }

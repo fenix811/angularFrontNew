@@ -16,4 +16,4 @@ import { CompaniesTabStateEffects } from './companiesTabState.effect';
     CommonModule
   ]
 })
-export class companiesTabStateModule { }
+export class CompaniesTabStateModule { }

@@ -8,12 +8,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { metaReducers } from './root-state';
 import { environment } from '../../environments/environment';
 import {appStateModule} from './appState/appState.module';
-import {companiesTabStateModule} from './companiesTabState/companiesTabState.module';
+import {CompaniesTabStateModule} from './companiesTabState/companiesTabState.module';
+import { OrdersTabStateModule } from './ordersTabState/ordersTabState.module';
 
 const features = [
   appStateModule,
-  companiesTabStateModule,
-]
+  CompaniesTabStateModule,
+  OrdersTabStateModule,
+];
 
 @NgModule({
   imports: [

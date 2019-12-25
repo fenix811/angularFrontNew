@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import Product from '../interfaces/product';
 import Company from '../interfaces/company';
 import { HttpClient } from '@angular/common/http';
+import Order from '../interfaces/order';
 
 const API_URL = 'http://localhost:61885/api/';
 
@@ -22,8 +23,8 @@ export class ApiService {
   public getCompanyProducts(id: number): Observable<Product[]> {
     return this.http.get<Product[]>(`api/product/getcompanyproducts/${id}`);
   }
-  public searchProduct(text: string): Observable<Product[]> {
-    return this.http.get<Product[]>('api/product/getproductsbyname/' + text);
+  public getOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(`api/product/getOrders`);
   }
 
 }

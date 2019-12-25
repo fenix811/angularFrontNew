@@ -16,7 +16,7 @@ export interface CompaniesTabState {
 export const initialState: CompaniesTabState = {
   companies: [],
   selectedCompany: null,
-}
+};
 
 export const companiesTabReducer = (
   state = initialState,
@@ -54,5 +54,5 @@ export const companiesTabReducer = (
   default:
     return state;
 }
-}
+};
 

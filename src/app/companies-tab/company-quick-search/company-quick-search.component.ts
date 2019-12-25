@@ -21,13 +21,13 @@ export class CompanyQuickSearchComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.products$ = this.searchForm.valueChanges.pipe(
-      debounce(() => interval(400)),
-        distinctUntilChanged(),   // ignore if next search query is same as previous
-        tap( v => console.log('tap: ' + v)),
-        switchMap(query => this.apiService.searchProduct(query.productName)
-        ));
-}
+    // this.products$ = this.searchForm.valueChanges.pipe(
+    //   debounce(() => interval(400)),
+    //     distinctUntilChanged(),   // ignore if next search query is same as previous
+    //     tap( v => console.log('tap: ' + v)),
+    //     switchMap(query => this.apiService.searchProduct(query.productName)
+    //     ));
+  }
 
 }
 

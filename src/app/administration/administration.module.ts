@@ -9,8 +9,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SecondAdminComponent } from './second-admin/second-admin.component';
 import { AppMaterialModule } from '../layout/app.material.module';
 
-
-
 @NgModule({
   declarations: [
     AdministrationComponent,
