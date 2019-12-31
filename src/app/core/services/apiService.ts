@@ -26,5 +26,9 @@ export class ApiService {
   public getOrders(): Observable<Order[]> {
     return this.http.get<Order[]>(`api/product/getOrders`);
   }
+  public getBonusDates(): Observable<any[]> {
+    return this.http.get<Order[]>(`api/bonus/getbonusdates`);
+  }
+
 
 }

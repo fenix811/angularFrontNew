@@ -20,7 +20,7 @@ export class LoadOrders implements Action {
 export class LoadOrdersSuccess implements Action {
   readonly type = EOrdersActionTypes.LoadOrdersSuccess;
 
-  constructor(public payload: Order[] ) { }
+  constructor(public payload: {orders: Order[], dates: any[]} ) { }
 }
 export class LoadOrdersFailure implements Action {
   readonly type = EOrdersActionTypes.LoadOrdersFailure;
