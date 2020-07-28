@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: './administration/administration.module#AdministrationModule'
+    loadChildren: () => import('./administration/administration.module').then(m => m.AdministrationModule)
   },
   {
     path: 'login',
